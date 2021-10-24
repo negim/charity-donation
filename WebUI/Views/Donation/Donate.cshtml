@@ -1,0 +1,227 @@
+﻿@model DonationFormModel
+
+<section class="form--steps">
+    <div class="form--steps-instructions">
+        <div class="form--steps-container">
+            <h3>@Localizer["importantExclamation"]</h3>
+            <p data-step="1" class="active">
+                @Localizer["fillDetailsForm"]
+            </p>
+            <p data-step="2">
+                @Localizer["fillDetailsForm"]
+            </p>
+            <p data-step="3">
+                @Localizer["pickOneInstitutionForm"]
+            </p>
+            <p data-step="4">@Localizer["collectionDetailsForm"]</p>
+        </div>
+    </div>
+
+    <div class="form--steps-container">
+        <div class="form--steps-counter">Krok <span>1</span>/4</div>
+
+        <form id="donation-form" asp-controller="Donation" asp-action="DonateExecute" method="post">
+            <!-- STEP 1: class .active is switching steps -->
+            <div data-step="1" class="active">
+                <h3>@Localizer["tickCategory"]</h3>
+
+                <div id="categories-checkbox-group">
+                    @foreach(var cat in Model.AvailableCategories)
+                    {
+                        <div class="form-group form-group--checkbox">
+                            <label>
+                                <input type="checkbox" class="category-item"
+                                       name="CategoriesString"
+                                       value="@cat.CategoryId"
+                                       data-category-name="@cat.CategoryName"/>
+                                <span class="checkbox"></span>
+                                <span class="description">@cat.CategoryName</span>
+                            </label>
+                        </div>
+                    }
+                    <div id="category-error-message" style="display: none">
+                        <ul>
+                            <li>
+                                @Localizer["pickAtLeastOneCategory"]
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="form-group form-group--buttons">
+                    <button id="step-1-next" type="button" class="btn next-step">@Localizer["nextButton"]</button>
+                </div>
+            </div>
+
+
+            <!-- STEP 2 -->
+            <div data-step="2">
+                <h3>@Localizer["provideNumberOfBags"]</h3>
+
+                <div class="form-group form-group--inline">
+                    <label>
+                        @Localizer["numberOfBags"]
+                        <input asp-for="NumberOfBags" min="@Model.MinNumberOfBags" max="@Model.MaxNumberOfBags"/>
+                    </label>
+                </div>
+
+                <div id="bags-error-message" style="display: none">
+                    <ul>
+                        <li>
+                            @Localizer["oneBagMin"]
+                        </li>
+                    </ul>
+                </div>
+
+                <partial name="_FormButtonsPartial">
+
+            </div>
+
+
+            <!-- STEP 3 -->
+            <div data-step="3">
+                <h3>@Localizer["chooseInstitutionYouWantToHelp"]</h3>
+                <div id="institution-checkbox-group">
+                    @foreach (var institution in Model.AvaiilableInstitutions)
+                    {
+                        <div class="form-group form-group--checkbox">
+                            <label>
+                                <input type="radio" class="institution-item"
+                                       name="SelectedInstitutionId"
+                                       value="@institution.Id"
+                                       data-category-name="@institution.Name"/>
+                                <span class="checkbox radio"></span>
+                                <span class="description">
+                                    <div class="title">@institution.Name</div>
+                                    <div class="subtitle">
+                                        @institution.Description
+                                    </div>
+                                </span>
+                            </label>
+                        </div>
+                    }
+                    <div id="institution-error-message" style="display: none">
+                        <ul>
+                            <li>
+                                @Localizer["pickOneInstitution"]
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <partial name="_FormButtonsPartial">
+
+            </div>
+
+
+            <!-- STEP 4 -->
+            <div data-step="4">
+                <h3>@Localizer["provideAddress"]</h3>
+
+                <div class="form-section form-section--columns">
+                    <div class="form-section--column">
+                        <h4>@Localizer["address"]</h4>
+                        <div class="form-group form-group--inline">
+                            <label> @Localizer["street"] <input type="text" asp-for="CollectionData.Street" /> </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label> @Localizer["city"] <input type="text" asp-for="CollectionData.City" /> </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label>
+                                @Localizer["zipCode"] <input type="text" asp-for="CollectionData.ZipCode" />
+                            </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label> @Localizer["phoneNumber"] <input type="text" asp-for="CollectionData.PhoneNumber" /></label>
+                        </div>
+                    </div>
+
+                    <div class="form-section--column">
+                        <h4>@Localizer["collectionDate"]</h4>
+                        <div class="form-group form-group--inline">
+                            <label> @Localizer["date"] <input type="date" asp-for="CollectionData.Date" value="@DateTime.Now.AddDays(3).ToString("yyyy-MM-dd")"/> </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label> @Localizer["time"] <input type="time" asp-for="CollectionData.Time" value="12:00"/> </label>
+                        </div>
+
+                        <div class="form-group form-group--inline">
+                            <label>
+                                @Localizer["collectionNotes"]
+                                <textarea asp-for="CollectionData.Notes" rows="5"></textarea>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="collection-error-message" style="display: none">
+                    <ul>
+                        <li>
+                            @Localizer["provideAddressDetails"]
+                        </li>
+                    </ul>
+                </div>
+
+                <partial name="_FormButtonsPartial">
+
+            </div>
+
+
+            <!-- STEP 5 -->
+            <div data-step="5">
+                    <h3>@Localizer["donationSummary"]</h3>
+
+                    <div class="summary">
+                        <div class="form-section">
+                            <h4>@Localizer["youAreGivingAway"]</h4>
+                            <ul>
+                                <li>
+                                    <span class="icon icon-bag"></span>
+                                    <span id="summary-items" class="summary--text"><!--ubrania w dobrym stanie dla dzieci (worków: 9)--></span>
+                                    <span id="summary-items-string" class="d-none">@Localizer["summaryItems"]</span>
+                                </li>
+
+                                <li>
+                                    <span class="icon icon-hand"></span>
+                                    <span id="summary-institution" class="summary--text"><!--dla: Fundacja "Mam marzenie"--></span>
+                                    <span id="summary-institution-string" class="d-none">@Localizer["summaryInstitution"]</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="form-section form-section--columns">
+                            <div class="form-section--column">
+                                <h4>@Localizer["addressColon"]</h4>
+                                <ul>
+                                    <li id="summary-street"><!--ulica--></li>
+                                    <li id="summary-city"><!--miasto--></li>
+                                    <li id="summary-zip"><!--kod--></li>
+                                    <li id="summary-phone"><!--telefon--></li>
+                                </ul>
+                            </div>
+
+                            <div class="form-section--column">
+                                <h4>@Localizer["collectionDateColon"]</h4>
+                                <ul>
+                                    <li id="summary-date"><!--data--></li>
+                                    <li id="summary-time"><!--godzina--></li>
+                                    <li id="summary-notes">@Localizer["summaryNoNotes"]</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group--buttons">
+                        <button type="button" class="btn prev-step">@Localizer["backButton"]</button>
+                        <button type="submit" class="btn">@Localizer["confirmButton"]</button>
+                    </div>
+                </div>
+
+
+        </form>
+    </div>
+</section>

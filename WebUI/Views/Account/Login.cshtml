@@ -1,0 +1,23 @@
+﻿@model LoginInputModel
+
+<section id="login-section" class="login-page">
+    <h2>@Localizer["loginLine"]</h2>
+    <form asp-controller="Account" asp-action="Login"
+          data-ajax="true"
+          data-ajax-method="POST"
+          data-ajax-complete="replaceContent(xhr, 'login-section'); reloadNavi('navi')">
+        <div class="form-group">
+            <input type="email" name="email" placeholder="@Localizer["emailLabel"]" />
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="@Localizer["passwordLabel"]" />
+            <a href="#" class="btn btn--small btn--without-border reset-password">@Localizer["recoverPasswordLink"]</a>
+        </div>
+        <div class="form-group" asp-validation-summary="All"></div>
+
+        <div class="form-group form-group--buttons">
+            <a asp-controller="Account" asp-action="Register" class="btn btn--without-border">@Localizer["signOnButton"]</a>
+            <button class="btn" type="submit">@Localizer["loginButton"]</button>
+        </div>
+    </form>
+</section>

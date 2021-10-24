@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutUsLine" xml:space="preserve">
+    <value>O nas</value>
+  </data>
+  <data name="aboutUsLink" xml:space="preserve">
+    <value>O nas</value>
+  </data>
+  <data name="aboutUsMessage" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>Adres odbioru</value>
+  </data>
+  <data name="addressColon" xml:space="preserve">
+    <value>Adres odbioru:</value>
+  </data>
+  <data name="appTitle" xml:space="preserve">
+    <value>Oddam w dobre ręce</value>
+  </data>
+  <data name="availableCategories" xml:space="preserve">
+    <value>ubrania, zabawki, sprzęt i inne</value>
+  </data>
+  <data name="backButton" xml:space="preserve">
+    <value>Wstecz</value>
+  </data>
+  <data name="chooseCategories" xml:space="preserve">
+    <value>Wybierz rzeczy</value>
+  </data>
+  <data name="chooseInstitution" xml:space="preserve">
+    <value>Wybierz fundację</value>
+  </data>
+  <data name="chooseInstitutionYouWantToHelp" xml:space="preserve">
+    <value>Wybierz organizację, której chcesz pomóc:</value>
+  </data>
+  <data name="chooseTrustedInstitution" xml:space="preserve">
+    <value>wybierz zaufane miejsce</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>Miasto</value>
+  </data>
+  <data name="collectionDate" xml:space="preserve">
+    <value>Termin odbioru</value>
+  </data>
+  <data name="collectionDateColon" xml:space="preserve">
+    <value>Termin odbioru:</value>
+  </data>
+  <data name="collectionDetailsForm" xml:space="preserve">
+    <value>Podaj adres oraz termin odbioru rzeczy.</value>
+  </data>
+  <data name="collectionNotes" xml:space="preserve">
+    <value>Uwagi dla kuriera</value>
+  </data>
+  <data name="collectionOnDate" xml:space="preserve">
+    <value>kurier przyjedzie w dogodnym terminie</value>
+  </data>
+  <data name="confirmationSlogan" xml:space="preserve">
+    <value>Dziękujemy za przesłanie formularza. Na maila prześlemy wszelkie informacje o odbiorze.</value>
+  </data>
+  <data name="confirmButton" xml:space="preserve">
+    <value>Potwierdzam</value>
+  </data>
+  <data name="contactForm" xml:space="preserve">
+    <value>Formularz kontaktowy</value>
+  </data>
+  <data name="contactLink" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="copyrightCopy" xml:space="preserve">
+    <value>Copyright &amp;copy;</value>
+  </data>
+  <data name="createAccountButton" xml:space="preserve">
+    <value>Załóż konto</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="decideWhoToHelp" xml:space="preserve">
+    <value>Zdecyduj komu chcesz pomóc</value>
+  </data>
+  <data name="demoWarning" xml:space="preserve">
+    <value>To jest demonstracja!</value>
+  </data>
+  <data name="demoWarningMessage" xml:space="preserve">
+    <value>Ta aplikacja to tylko demonstracja. Żadna z czynności przeprowadzona przez uzytkownika w tej aplikacji nie prowadzi do żadnych czynności podjętych przez kogokolwiek. Ta aplikacja używana jest jedynie w celach demonstracyjnych i testowych.</value>
+  </data>
+  <data name="donateLink" xml:space="preserve">
+    <value>Przekaż dary</value>
+  </data>
+  <data name="donationSummary" xml:space="preserve">
+    <value>Podsumowanie Twojej darowizny</value>
+  </data>
+  <data name="emailLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="fillDetailsForm" xml:space="preserve">
+    <value>Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
+                wiedzieć komu najlepiej je przekazać.</value>
+  </data>
+  <data name="firstName" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="fourSteps" xml:space="preserve">
+    <value>Wystarczą 4 proste kroki</value>
+  </data>
+  <data name="fourStepsColon" xml:space="preserve">
+    <value>Wystarczą 4 proste kroki:</value>
+  </data>
+  <data name="getInTouch" xml:space="preserve">
+    <value>Skontaktuj się z nami</value>
+  </data>
+  <data name="hello" xml:space="preserve">
+    <value>Witaj</value>
+  </data>
+  <data name="importantExclamation" xml:space="preserve">
+    <value>Ważne!</value>
+  </data>
+  <data name="institutionsLink" xml:space="preserve">
+    <value>Fundacje i organizacje</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="loginButton" xml:space="preserve">
+    <value>Zaloguj</value>
+  </data>
+  <data name="loginLine" xml:space="preserve">
+    <value>Zaloguj się</value>
+  </data>
+  <data name="loginSuccessMessage" xml:space="preserve">
+    <value>Udało się poprawnie zalogować!</value>
+  </data>
+  <data name="logoutLink" xml:space="preserve">
+    <value>Wyloguj</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Wiadomość</value>
+  </data>
+  <data name="nextButton" xml:space="preserve">
+    <value>Dalej</value>
+  </data>
+  <data name="numberOfBags" xml:space="preserve">
+    <value>Liczba 60l worków:</value>
+  </data>
+  <data name="numberOfDonatedBags" xml:space="preserve">
+    <value>Oddanych worków</value>
+  </data>
+  <data name="numberOfDonatedBagsDescription" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum tempora!</value>
+  </data>
+  <data name="numberOfRecieverInstitutions" xml:space="preserve">
+    <value>Wspartych organizacji</value>
+  </data>
+  <data name="numberOfRecieverInstitutionsDescription" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas quam.</value>
+  </data>
+  <data name="oneBagMin" xml:space="preserve">
+    <value>Liczba worków musi być między 1 a 100.</value>
+  </data>
+  <data name="orderPickUp" xml:space="preserve">
+    <value>Zamów kuriera</value>
+  </data>
+  <data name="packThem" xml:space="preserve">
+    <value>Spakuj je</value>
+  </data>
+  <data name="packThemInBags" xml:space="preserve">
+    <value>Spakuj je w worki</value>
+  </data>
+  <data name="passwordLabel" xml:space="preserve">
+    <value>Hasło</value>
+  </data>
+  <data name="peopleAlt" xml:space="preserve">
+    <value>Ludzie w kręgu</value>
+  </data>
+  <data name="phoneNumber" xml:space="preserve">
+    <value>Numer telefonu</value>
+  </data>
+  <data name="pickAtLeastOneCategory" xml:space="preserve">
+    <value>Musisz wybrać conajmniej jedną kategorię.</value>
+  </data>
+  <data name="pickOneInstitution" xml:space="preserve">
+    <value>Musisz wybrać jedną organizację.</value>
+  </data>
+  <data name="pickOneInstitutionForm" xml:space="preserve">
+    <value>Wybierz jedną, do
+                której trafi Twoja przesyłka.</value>
+  </data>
+  <data name="privacyWarning" xml:space="preserve">
+    <value>Prywatność i ciasteczka</value>
+  </data>
+  <data name="privacyWarningMessage" xml:space="preserve">
+    <value>Ta aplikacja wykorzystuje pliki cookies (ciasteczka). Jeśli nie wyrażasz na to zgody, opuść tę stronę oraz usuń utworzone cookies (ciasteczka). Ponadto dane, które wysyłasz za pomocą formularzy dostępnych na stronie będą przechowywane. Jeśli chcesz usunąć przesłane już dane, poinformuj mnie o tym w wiadomości e-mail na adres 2021mt12269@wilp.bits-pilani.ac.in.</value>
+  </data>
+  <data name="provideAddress" xml:space="preserve">
+    <value>Podaj adres oraz termin odbioru rzeczy przez kuriera:</value>
+  </data>
+  <data name="provideAddressDetails" xml:space="preserve">
+    <value>Podaj wszystkie informacje niezbędne dla kuriera</value>
+  </data>
+  <data name="provideNumberOfBags" xml:space="preserve">
+    <value>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</value>
+  </data>
+  <data name="recoverPasswordLink" xml:space="preserve">
+    <value>Odzyskaj hasło</value>
+  </data>
+  <data name="registerSuccessMessage" xml:space="preserve">
+    <value>Rejestracja przebiegła pomyślnie i udało się zalogować!</value>
+  </data>
+  <data name="repeatPasswordLabel" xml:space="preserve">
+    <value>Powtórz hasło</value>
+  </data>
+  <data name="sendButton" xml:space="preserve">
+    <value>Wyślij</value>
+  </data>
+  <data name="showAllButton" xml:space="preserve">
+    <value>Pokaż wszystkie</value>
+  </data>
+  <data name="signatureAlt" xml:space="preserve">
+    <value>Podpis</value>
+  </data>
+  <data name="signOnButton" xml:space="preserve">
+    <value>Załóż konto</value>
+  </data>
+  <data name="signOnLine" xml:space="preserve">
+    <value>Załóż konto</value>
+  </data>
+  <data name="sloganFormLine" xml:space="preserve">
+    <value>Oddaj rzeczy, których już nie chcesz&lt;br /&gt;&lt;span class="uppercase"&gt;potrzebującym&lt;/span&gt;</value>
+  </data>
+  <data name="sloganLine" xml:space="preserve">
+    <value>Zacznij pomagać!</value>
+  </data>
+  <data name="sloganMessage" xml:space="preserve">
+    <value>Oddaj niechciane rzeczy w zaufane ręce.</value>
+  </data>
+  <data name="startLink" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="street" xml:space="preserve">
+    <value>Ulica</value>
+  </data>
+  <data name="summaryInstitution" xml:space="preserve">
+    <value>dla: %INSTITUTION%</value>
+  </data>
+  <data name="summaryItems" xml:space="preserve">
+    <value>%CATEGORY% (worków: %COUNT%)</value>
+  </data>
+  <data name="summaryNoNotes" xml:space="preserve">
+    <value>brak uwag</value>
+  </data>
+  <data name="thankYouLine" xml:space="preserve">
+    <value>Dziękujemy!</value>
+  </data>
+  <data name="tickCategory" xml:space="preserve">
+    <value>Zaznacz co chcesz oddać:</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Godzina</value>
+  </data>
+  <data name="useBags" xml:space="preserve">
+    <value>skorzystaj z worków na śmieci</value>
+  </data>
+  <data name="whatIsItAboutLink" xml:space="preserve">
+    <value>O co chodzi?</value>
+  </data>
+  <data name="whoWeHelp" xml:space="preserve">
+    <value>Komu pomagamy?</value>
+  </data>
+  <data name="whoWeHelpBody" xml:space="preserve">
+    <value>W naszej bazie znajdziesz listę zweryfikowanych fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują.</value>
+  </data>
+  <data name="youAreGivingAway" xml:space="preserve">
+    <value>Oddajesz:</value>
+  </data>
+  <data name="yourMessageHasBeenSent" xml:space="preserve">
+    <value>Twoja wiadomość została pomyślnie dostarczona do administratorów serwisu.</value>
+  </data>
+  <data name="zipCode" xml:space="preserve">
+    <value>Kod pocztowy</value>
+  </data>
+</root>

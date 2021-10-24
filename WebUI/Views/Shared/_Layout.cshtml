@@ -1,0 +1,73 @@
+﻿@model ViewModelBase
+@{ 
+    if (ViewBag.ShowSlogan == null) { ViewBag.ShowSlogan = false; } else { ViewBag.HeaderClass = "header--main-page"; }
+                if (ViewBag.ShowFormSlogan == null) { ViewBag.ShowFormSlogan = false; } else { ViewBag.HeaderClass = "header--form-page"; }
+                if (ViewBag.ShowConfirmationSlogan == null) { ViewBag.ShowConfirmationSlogan = false; } else { ViewBag.HeaderClass = "header--form-page"; } 
+}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>@Localizer["appTitle"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css" />
+    <partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml">
+</head>
+<body>
+    <!-- <div class="alert alert-warning fixed-top sticky-top" role="alert">
+        <h3 class="alert-heading">@Localizer["demoWarning"]</h3>
+        <p>@Localizer["demoWarningMessage"]</p>
+        <hr>
+        <h3 class="alert-heading">@Localizer["privacyWarning"]</h3>
+        <p class="mb-0">@Localizer["privacyWarningMessage"]</p>
+    </div> -->
+    <header class="@ViewBag.HeaderClass">
+        <nav class="container container--70">
+
+            <partial name="~/Views/Shared/_NavActionsPartial.cshtml">
+
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index" class="btn btn--without-border active">@Localizer["startLink"]</a></li>
+                    <li><a href="/#steps" class="btn btn--without-border">@Localizer["whatIsItAboutLink"]</a></li>
+                    <li><a href="/#about-us" class="btn btn--without-border">@Localizer["aboutUsLink"]</a></li>
+                    <li><a href="/#help" class="btn btn--without-border">@Localizer["institutionsLink"]</a></li>
+                    <li><a asp-controller="Donation" asp-action="Donate" class="btn btn--without-border">@Localizer["donateLink"]</a></li>
+                    <li><a href="/#contact" class="btn btn--without-border">@Localizer["contactLink"]</a></li>
+                </ul>
+        </nav>
+
+        <partial name="~/Views/Shared/_SlogansPartial.cshtml">
+    </header>
+
+    @RenderBody()
+
+    <footer>
+        <div id="contact" class="contact">
+            <h2>@Localizer["getInTouch"]</h2>
+            <h3>@Localizer["contactForm"]</h3>
+            <form class="form--contact" asp-controller="Home" asp-action="PostMessage"
+                  data-ajax="true"
+                  data-ajax-method="POST"
+                  data-ajax-complete="replaceContent(xhr, 'contact')">
+                <div class="form-group form-group--50"><input asp-for="MessageData.Name" placeholder="@Localizer["firstName"]" /></div>
+                <div class="form-group form-group--50"><input asp-for="MessageData.LastName" placeholder="@Localizer["lastName"]" /></div>
+
+                <div class="form-group"><textarea asp-for="MessageData.Message" placeholder="@Localizer["message"]" rows="1"></textarea></div>
+
+                <div class="form-group" asp-validation-summary="All"></div>
+
+                <button class="btn" type="submit">@Localizer["sendButton"]</button>
+            </form>
+        </div>
+
+        <div class="bottom-line">
+            <span class="bottom-line--copy">@Localizer["copyrightCopy"] @DateTime.Now.Year</span>
+        </div>
+    </footer>
+
+    <script src="~/js/app.js"></script>
+</body>
+</html>

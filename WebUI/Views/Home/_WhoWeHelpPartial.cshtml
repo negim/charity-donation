@@ -1,0 +1,54 @@
+﻿@model WhoWeHelpViewModel
+
+<section id="help" class="help">
+    <h2>@Localizer["whoWeHelp"]</h2>
+
+    <!-- SLIDE 1 -->
+    <div class="help--slides active" data-id="1">
+        <p>
+            @Localizer["whoWeHelpBody"]
+        </p>
+
+        <ul class="help--slides-items">
+            @foreach (var pair in Model.Institutions)
+            {
+                string name1 = pair.Item1 != null ? pair.Item1.Name : " ";
+                string desc1 = pair.Item1 != null ? pair.Item1.Description : " ";
+                string name2 = pair.Item2 != null ? pair.Item2.Name : " ";
+                string desc2 = pair.Item2 != null ? pair.Item2.Description : " ";
+
+                <li>
+                    <div class="col">
+                        @if (!(string.IsNullOrWhiteSpace(name1) && string.IsNullOrWhiteSpace(desc1)))
+                        {
+                            <div class="title">@name1</div>
+                            <div class="subtitle">@desc1</div>
+                            <div class="line"></div>
+                        }
+                    </div>
+                    <div class="col">
+                        @if (!(string.IsNullOrWhiteSpace(name2) && string.IsNullOrWhiteSpace(desc2)))
+                        {
+                            <div class="title">@name2</div>
+                            <div class="subtitle">@desc2</div>
+                            <div class="line right"></div>
+                        }
+                    </div>
+                </li>
+            }
+        </ul>
+
+        @if (Model.ShowAllLink)
+        {
+            <p>
+                <a id="showMoreButton" class="btn btn--small btn--without-border active" asp-action="ShowAllInstitutions"
+                   data-ajax="true"
+                   data-ajax-method="GET"
+                   data-ajax-complete="replaceContent(xhr, 'help')">
+                    @Localizer["showAllButton"]
+                </a>
+            </p>
+        }
+    </div>
+
+</section>

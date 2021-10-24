@@ -1,0 +1,51 @@
+﻿@model IndexViewModel
+
+<partial name="_StatsPartial" model="@Model.StatsViewModel">
+
+    <section id="steps" class="steps">
+        <h2>@Localizer["fourSteps"]</h2>
+
+        <div class="steps--container">
+            <div class="steps--item">
+                <span class="icon icon--hands"></span>
+                <h3>@Localizer["chooseCategories"]</h3>
+                <p>@Localizer["availableCategories"]</p>
+            </div>
+            <div class="steps--item">
+                <span class="icon icon--arrow"></span>
+                <h3>@Localizer["packThem"]</h3>
+                <p>@Localizer["useBags"]</p>
+            </div>
+            <div class="steps--item">
+                <span class="icon icon--glasses"></span>
+                <h3>@Localizer["decideWhoToHelp"]</h3>
+                <p>@Localizer["chooseTrustedInstitution"]</p>
+            </div>
+            <div class="steps--item">
+                <span class="icon icon--courier"></span>
+                <h3>@Localizer["orderPickUp"]</h3>
+                <p>@Localizer["collectionOnDate"]</p>
+            </div>
+        </div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a asp-controller="Donation" asp-action="Donate" class="btn btn--large">@Localizer["donateLink"]</a>
+        }
+        else
+        {
+            <a asp-controller="Account" asp-action="Login" class="btn btn--large">@Localizer["loginButton"]</a>
+            <a asp-controller="Account" asp-action="Register" class="btn btn--large">@Localizer["createAccountButton"]</a>
+        }
+    </section>
+
+    <section id="about-us" class="about-us">
+        <div class="about-us--text">
+            <h2>@Localizer["aboutUsLine"]</h2>
+            <p>@Localizer["aboutUsMessage"]</p>
+            <img src="images/signature.svg" class="about-us--text-signature" alt="@Localizer["signatureAlt"]" />
+        </div>
+        <div class="about-us--image"><img src="images/about-us.jpg" alt="@Localizer["peopleAlt"]" /></div>
+    </section>
+
+    <partial name="_WhoWeHelpPartial" model="@Model.WhoWeHelpViewModel">
