@@ -1,7 +1,7 @@
 # charity-donation
 Sample web app project where users can donate items for charity
 
-Live demo: http://charity.mkajzer.hostingasp.pl/
+Live demo: http://localhost:8080
 
 ## IDEA
 
