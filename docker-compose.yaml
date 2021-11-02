@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  app:
+    build:
+      context: ./WebUI
+      dockerfile: Dockerfile
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=sqlexpress;User ID=sa;Database=master;Password=P@ssw0rd;Initial Catalog=charity-donation;MultipleActiveResultSets=True;Integrated Security=True;Trusted_Connection=False;"
+    expose:
+      - 5000
+    depends_on:
+      - sqlexpress
+
+  sqlexpress:
+    build:
+      context: ./docker/sqlserver
+      dockerfile: Dockerfile
+    container_name: mssql-server
+    environment:
+      MSSQL_PID: "Express"
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "P@ssw0rd"
+    volumes:
+      - ./docker/sqlserver/sql/mount:/var/opt/mssql/data
+      - ./docker/logs:/app/logs
+      - ./docker/scripts:/tmp
+    ports:
+      - 1433:1433
+
+  web:
+    build:
+      context: ./docker/nginx
+    environment:
+      BACKEND_HOST: "app:5000" 
+    depends_on:
+      - app
+    ports: 
+      - 80:80

@@ -35,7 +35,10 @@ namespace WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CharityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
-
+            
+            Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+            Console.WriteLine(Configuration["ConnectionStrings:DefaultConnection"]);
+            Console.WriteLine("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
             services.AddIdentity<CharityUser, IdentityRole>()
                 .AddEntityFrameworkStores<CharityDbContext>();
 

@@ -124,7 +124,7 @@
     <value>About us</value>
   </data>
   <data name="aboutUsMessage" xml:space="preserve">
-    <value>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero optio esse quisquam illo omnis.</value>
+    <value>DBMS GROUP 1</value>
   </data>
   <data name="address" xml:space="preserve">
     <value>Collection address</value>
@@ -316,7 +316,7 @@
     <value>Let us know number of 60 ltr bags you pack your thins into:</value>
   </data>
   <data name="recoverPasswordLink" xml:space="preserve">
-    <value>Rest password</value>
+    <value>Reset password</value>
   </data>
   <data name="registerSuccessMessage" xml:space="preserve">
     <value>You've been registered and logged in</value>

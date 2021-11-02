@@ -10,7 +10,7 @@ using WebUI.Data;
 namespace WebUI.Migrations
 {
     [DbContext(typeof(CharityDbContext))]
-    [Migration("20191220193112_CharityUser")]
+    [Migration("20211020193112_CharityUser")]
     partial class CharityUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
