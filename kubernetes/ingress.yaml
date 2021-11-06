@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: charity-donation
+spec:
+  rules:
+  - host: charitydonation.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: charity-donation
+          servicePort: 80

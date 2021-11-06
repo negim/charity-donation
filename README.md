@@ -1,7 +1,7 @@
 # charity-donation
 Sample web app project where users can donate items for charity
 
-Live demo: http://localhost:8080
+Live demo: http://localhost:80
 
 ## IDEA
 
@@ -22,3 +22,10 @@ Live demo: http://localhost:8080
 * JS + jQuery
 * HTML + CSS
 
+## Docker Setup
+
+* coming soon
+
+## kubernetes Setup
+
+* coming soon

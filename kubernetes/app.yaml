@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: charity-donation
+  labels:
+    app: charity-donation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: charity-donation
+  template:
+    metadata:
+      labels:
+        app: charity-donation
+    spec:
+      containers:
+      - name: web
+        image: charity-donation_web
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: BACKEND_HOST
+          value: localhost:5000  
+        ports:
+        - containerPort: 80
+      - name: app
+        image: charity-donation_app
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: ConnectionStrings__DefaultConnection
+          value: "Server=sqlexpress;Database=master;User ID=sa;Password=P@ssw0rd;initial catalog=charity-donation;MultipleActiveResultSets=True;App=EntityFramework;"
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: charity-donation
+spec:
+  selector:
+    app: charity-donation
+  ports:
+  - name: http
+    port: 80

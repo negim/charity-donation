@@ -10,7 +10,7 @@ using WebUI.Data;
 namespace WebUI.Migrations
 {
     [DbContext(typeof(CharityDbContext))]
-    [Migration("20191220162724_CategoryDonationRelationship")]
+    [Migration("20211020162724_CategoryDonationRelationship")]
     partial class CategoryDonationRelationship
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
